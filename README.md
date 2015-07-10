@@ -45,25 +45,25 @@ For your project you can use the following methods.
 Committee:
 
 Example:
-'''ruby
+```ruby
   committees = Sunlight::CongressCommittee.all_for_chamber("Senate") # or "House" or "Joint"
   some_committee = committees.last    # some_committee.members starts out as nil
   some_committee.load_members         # some_committee.members is now populated
   some_committee.members.each do |legislator|
     # do some stuff...
   end
-'''  
+```
 
 Legislators:
 
 Example
-'''ruby
+```ruby
 legislators = Sunlight::Congress::Legislator.search_by_name("Byron Dorgan")
   legislator = legislators.first
   legislator.committees.each do |committee|
     # do some stuff...
   end
-'''  
+```
   
 
 
