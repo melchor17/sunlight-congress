@@ -43,6 +43,6 @@ class Sunlight::Congress::Legislator
   def committees
     uri = URI("#{Sunlight::Congress::BASE_URI}/committees?member_ids=#{bioguide_id}&apikey=#{Sunlight::Congress.api_key}")
     puts uri
-    JSON.load(Net::HTTP.get(uri))["results"].collect{|json| new(json) }
+    JSON.load(Net::HTTP.get(uri))["results"].collect{|json| Committee.new(json) }
   end
 end
