@@ -16,4 +16,9 @@ class Sunlight::Congress::Committee
 
     JSON.load(Net::HTTP.get(uri))["results"].collect{|json| new(json) }
   end
+
+  def self.all_for_chamber(chamber)
+    uri = URI("#{Sunlight::Congress::BASE_URI}/committees?chamber=#{chamber}&apikey=#{Sunlight::Congress.api_key}")
+    JSON.load(Net::HTTP.get(uri))["results"].collect{|json| new(json) }
+  end
 end
