@@ -58,7 +58,7 @@ Legislators:
 
 Example
 ```ruby
-legislators = Sunlight::Congress::Legislator.by_name("90210")
+legislators = Sunlight::Congress::Legislator.by_zipcode("90210")
   legislator = legislators.first
   legislator.committees.each do |committee|
     # do some stuff...
