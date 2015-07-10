@@ -44,3 +44,4 @@ class Sunlight::Congress::Legislator < Base
     uri = URI("#{Sunlight::Congress::BASE_URI}/committees?bioguide_id=#{bioguide_id}&apikey=#{Sunlight::Congress.api_key}")
     JSON.load(Net::HTTP.get(uri))["results"].collect{|json| new(json) }
   end
+end
