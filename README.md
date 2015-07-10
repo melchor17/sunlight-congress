@@ -46,7 +46,7 @@ Committee:
 
 Example:
 ```ruby
-  committees = Sunlight::CongressCommittee.all_for_chamber("Senate") # or "House" or "Joint"
+  committees = Sunlight::Congress::Committee.all_for_chamber("Senate") # or "House" or "Joint"
   some_committee = committees.last    # some_committee.members starts out as nil
   some_committee.load_members         # some_committee.members is now populated
   some_committee.members.each do |legislator|
@@ -58,7 +58,7 @@ Legislators:
 
 Example
 ```ruby
-legislators = Sunlight::Congress::Legislator.search_by_name("Byron Dorgan")
+legislators = Sunlight::Congress::Legislator.by_name("90210")
   legislator = legislators.first
   legislator.committees.each do |committee|
     # do some stuff...
