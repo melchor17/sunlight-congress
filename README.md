@@ -46,7 +46,7 @@ Committee:
 
 Example:
 ```ruby
-  committees = Sunlight::Congress::Committee.all_for_chamber("Senate") # or "House" or "Joint"
+  committees = Sunlight::Congress::Committee.all_for_chamber("senate") # or "house" or "joint"
   some_committee = committees.last    # some_committee.members starts out as nil
   some_committee.load_members         # some_committee.members is now populated
   some_committee.members.each do |legislator|
